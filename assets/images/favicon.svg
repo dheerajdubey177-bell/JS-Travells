@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JS Travels Logo">
   <defs>
     <linearGradient id="jsBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B1B3B"/>
-      <stop offset="100%" stop-color="#132D5E"/>
+      <stop offset="0%" stop-color="#19171D"/>
+      <stop offset="100%" stop-color="#0E0D11"/>
     </linearGradient>
     <linearGradient id="jsGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFB703"/>
-      <stop offset="100%" stop-color="#F59E0B"/>
+      <stop offset="0%" stop-color="#FCE3A6"/>
+      <stop offset="55%" stop-color="#F2B449"/>
+      <stop offset="100%" stop-color="#D98D26"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#jsBg)"/>
-  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="url(#jsGold)" stroke-opacity="0.45" stroke-width="1.5"/>
-  <text x="32" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" letter-spacing="-1" fill="#FFFFFF">J<tspan fill="url(#jsGold)">S</tspan></text>
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="url(#jsGold)" stroke-opacity="0.65" stroke-width="1.8"/>
+  <text x="32" y="42" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" letter-spacing="-1" fill="#FAF6F0">J<tspan fill="url(#jsGold)">S</tspan></text>
 </svg>

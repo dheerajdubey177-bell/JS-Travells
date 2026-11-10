@@ -16,8 +16,8 @@ Official website for **JS Travels & Transport Service** — Bhilai, Chhattisgarh
 - `index.html` — Semantic HTML5 website with LocalBusiness JSON-LD & interactive booking UI
 - `css/styles.css` — Responsive design system and custom styling
 - `js/main.js` — Fleet filters, rate tabs, Tempo Traveller interior toggle, gallery lightbox, and WhatsApp/Email booking dispatch
-- `assets/images/` — Web-optimized and properly oriented images derived from the original fleet & visiting card media
-- `IMG-20261110-WA0100.jpg` – `IMG-20261110-WA0113.jpg` — Original fleet photographs and official JS Travels rate posters
+- `assets/images/` — Web-optimized and properly oriented images derived from the original fleet, logo (`js-logo.jpg`), & visiting card media
+- `1000704230.jpg` & `IMG-20261110-WA0100.jpg` – `IMG-20261110-WA0113.jpg` — Original JS logo, fleet photographs, and official rate posters
 
 ## Contact Details
 - **Proprietor:** Jaspal Singh
