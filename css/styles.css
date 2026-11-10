@@ -51,6 +51,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -60,7 +62,8 @@ body {
   background: var(--surface-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 img {
@@ -281,14 +284,16 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem;
   height: 76px;
+  min-width: 0;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 0.78rem;
+  min-width: 0;
 }
 
 .brand-mark {
@@ -323,6 +328,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   line-height: 1.05;
+  min-width: 0;
 }
 
 .brand-title {
@@ -377,6 +383,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -386,18 +393,25 @@ h1, h2, h3, h4 {
   gap: 5px;
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   border-radius: 10px;
-  border: 1px solid rgba(242, 180, 73, 0.38);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(242, 180, 73, 0.75);
+  background: rgba(242, 180, 73, 0.16);
   cursor: pointer;
   padding: 0 9px;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.menu-toggle:hover {
+  background: rgba(242, 180, 73, 0.28);
 }
 
 .menu-toggle span {
-  height: 2px;
+  display: block;
+  height: 2.5px;
   width: 100%;
-  background: #faf6f0;
-  border-radius: 2px;
+  background: var(--gold-300);
+  border-radius: 3px;
 }
 
 /* Mobile Drawer */
@@ -783,6 +797,7 @@ h1, h2, h3, h4 {
 
 .section {
   padding: 5.2rem 0;
+  overflow-x: clip;
 }
 
 .section-tinted {
@@ -1536,6 +1551,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  min-width: 0;
 }
 
 .form-field label {
@@ -1547,6 +1563,8 @@ h1, h2, h3, h4 {
 .form-field input,
 .form-field select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.72rem 0.9rem;
   border-radius: 10px;
   border: 1.5px solid var(--border-light);
@@ -1650,7 +1668,7 @@ h1, h2, h3, h4 {
   margin: 0;
   font-weight: 600;
   color: var(--navy-900);
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .phone-pills {
@@ -1732,6 +1750,7 @@ h1, h2, h3, h4 {
   background: var(--navy-950);
   color: var(--text-light-muted);
   padding: 4rem 0 1.8rem;
+  overflow-x: clip;
 }
 
 .footer-grid {
@@ -1767,6 +1786,7 @@ h1, h2, h3, h4 {
   display: grid;
   gap: 0.55rem;
   font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .footer-links a:hover {
@@ -1947,7 +1967,13 @@ h1, h2, h3, h4 {
   .hero-grid,
   .split-showcase,
   .booking-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-grid > *,
+  .split-showcase > *,
+  .booking-grid > * {
+    min-width: 0;
   }
 
   .hero-float-top {
@@ -1959,17 +1985,17 @@ h1, h2, h3, h4 {
   }
 
   .rate-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .services-grid,
   .fleet-grid,
   .goods-rate-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1989,12 +2015,21 @@ h1, h2, h3, h4 {
   .form-row,
   .form-actions,
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-grid > *,
+  .fleet-grid > *,
+  .rate-cards-grid > *,
+  .goods-rate-grid > *,
+  .form-row > *,
+  .footer-grid > * {
+    min-width: 0;
   }
 
   .wedding-mosaic {
-    grid-template-columns: 1fr;
-    grid-template-rows: 280px 240px 240px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 260px 220px 220px;
   }
 
   .wedding-card-large {
@@ -2002,7 +2037,7 @@ h1, h2, h3, h4 {
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -2026,5 +2061,62 @@ h1, h2, h3, h4 {
 
   .lightbox-next {
     right: 0.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    width: min(1220px, 100% - 1.5rem);
+  }
+
+  .header-inner {
+    height: 64px;
+    gap: 0.65rem;
+  }
+
+  .brand {
+    gap: 0.55rem;
+  }
+
+  .brand-mark-logo {
+    width: 66px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .brand-title {
+    font-size: 1.06rem;
+  }
+
+  .brand-sub {
+    font-size: 0.68rem;
+  }
+
+  .header-actions .btn {
+    display: none;
+  }
+
+  .hero-cta .btn-lg {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .hero-pill {
+    font-size: 0.78rem;
+    padding: 0.42rem 0.8rem;
+  }
+
+  .gallery-grid {
+    gap: 0.7rem;
+  }
+
+  .floating-dock {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .dock-btn {
+    width: 48px;
+    height: 48px;
   }
 }
